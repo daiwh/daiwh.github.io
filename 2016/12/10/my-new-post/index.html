@@ -84,16 +84,28 @@
 
 
 
-<meta name="description" content="mysql操作12345678910111213141516171819202122232425var mysql = require(&apos;mysql&apos;);var connection = mysql.createConnection(&amp;#123;	host: &apos;123.207.124.135&apos;,	port: 3306,	database: &apos;myWeixin&apos;,	user:     &apos;myWeix">
+<meta name="description" content="event模块
+node.js里的很多对象都是事件分发的，而这些处理事件分发的对象都是eventEmitter的实例。event模块只提供一个对象eventEmitter，它是对事件的监听和触发的封装
+
+可以通过events模块里的EventEmitter里的on方法来绑定一个事件和它的注册方法，当该事件触发时执行该方法，可以通过EventEmitter对象的emit方法来触发事件。
+eg1123">
 <meta property="og:type" content="article">
-<meta property="og:title" content="express学习笔记">
+<meta property="og:title" content="nod.js学习笔记（前奏）">
 <meta property="og:url" content="http://yoursite.com/2016/12/10/my-new-post/index.html">
 <meta property="og:site_name" content="Daiwh">
-<meta property="og:description" content="mysql操作12345678910111213141516171819202122232425var mysql = require(&apos;mysql&apos;);var connection = mysql.createConnection(&amp;#123;	host: &apos;123.207.124.135&apos;,	port: 3306,	database: &apos;myWeixin&apos;,	user:     &apos;myWeix">
-<meta property="og:updated_time" content="2016-12-10T11:49:45.818Z">
+<meta property="og:description" content="event模块
+node.js里的很多对象都是事件分发的，而这些处理事件分发的对象都是eventEmitter的实例。event模块只提供一个对象eventEmitter，它是对事件的监听和触发的封装
+
+可以通过events模块里的EventEmitter里的on方法来绑定一个事件和它的注册方法，当该事件触发时执行该方法，可以通过EventEmitter对象的emit方法来触发事件。
+eg1123">
+<meta property="og:updated_time" content="2016-12-12T03:34:02.760Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="express学习笔记">
-<meta name="twitter:description" content="mysql操作12345678910111213141516171819202122232425var mysql = require(&apos;mysql&apos;);var connection = mysql.createConnection(&amp;#123;	host: &apos;123.207.124.135&apos;,	port: 3306,	database: &apos;myWeixin&apos;,	user:     &apos;myWeix">
+<meta name="twitter:title" content="nod.js学习笔记（前奏）">
+<meta name="twitter:description" content="event模块
+node.js里的很多对象都是事件分发的，而这些处理事件分发的对象都是eventEmitter的实例。event模块只提供一个对象eventEmitter，它是对事件的监听和触发的封装
+
+可以通过events模块里的EventEmitter里的on方法来绑定一个事件和它的注册方法，当该事件触发时执行该方法，可以通过EventEmitter对象的emit方法来触发事件。
+eg1123">
 
 
 
@@ -111,7 +123,7 @@
   };
 </script>
 
-  <title> express学习笔记 | Daiwh </title>
+  <title> nod.js学习笔记（前奏） | Daiwh </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -231,7 +243,7 @@
             
             
               
-                express学习笔记
+                nod.js学习笔记（前奏）
               
             
           </h1>
@@ -271,7 +283,31 @@
       
 
       
-        <h2 id="mysql操作"><a href="#mysql操作" class="headerlink" title="mysql操作"></a>mysql操作</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">var mysql = require(<span class="string">'mysql'</span>);</div><div class="line"></div><div class="line">var connection = mysql.createConnection(&#123;</div><div class="line">	host: <span class="string">'123.207.124.135'</span>,</div><div class="line">	port: 3306,</div><div class="line">	database: <span class="string">'myWeixin'</span>,</div><div class="line">	user:     <span class="string">'myWeixin'</span>,</div><div class="line">	password: <span class="string">'myWeixin'</span></div><div class="line"></div><div class="line">&#125;);</div><div class="line"></div><div class="line">connection.connect(<span class="keyword">function</span>(err)&#123;</div><div class="line">	<span class="keyword">if</span>(err)</div><div class="line">		console.log(<span class="string">'数据库连接失败'</span>);</div><div class="line">	<span class="keyword">else</span>&#123;</div><div class="line">		console.log(<span class="string">'数据库连接成功'</span>);</div><div class="line">		connection.end(<span class="keyword">function</span>(err)&#123;</div><div class="line">			<span class="keyword">if</span>(err)</div><div class="line">				console.log(<span class="string">'关闭数据库失败'</span>);</div><div class="line">			<span class="keyword">else</span>&#123;</div><div class="line">				console.log(<span class="string">'关闭数据库成功'</span>);</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+        <h2 id="event模块"><a href="#event模块" class="headerlink" title="event模块"></a>event模块</h2><blockquote>
+<p>node.js里的很多对象都是事件分发的，而这些处理事件分发的对象都是eventEmitter的实例。<br>event模块只提供一个对象eventEmitter，它是对事件的监听和触发的封装</p>
+</blockquote>
+<p>可以通过events模块里的EventEmitter里的on方法来绑定一个事件和它的注册方法，当该事件触发时执行该方法，可以通过EventEmitter对象的emit方法来触发事件。</p>
+<h3 id="eg1"><a href="#eg1" class="headerlink" title="eg1"></a>eg1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var events = require(&apos;events&apos;);</div><div class="line"></div><div class="line">var eventEmitter = new events.EventEmitter();</div><div class="line"></div><div class="line">var connectionHandler = function connected()&#123;</div><div class="line">	console.log(&apos;连接成功&apos;);</div><div class="line"></div><div class="line">	eventEmitter.emit(&apos;data_received&apos;);</div><div class="line">&#125;</div><div class="line">eventEmitter.on(&apos;connection&apos;, connectionHandler);</div><div class="line">eventEmitter.on(&apos;data_received&apos;, function()&#123;</div><div class="line">	console.log(&apos;数据接收成功&apos;)</div><div class="line">&#125;);</div><div class="line">eventEmitter.emit(&apos;connection&apos;)</div></pre></td></tr></table></figure>
+<h3 id="eg2"><a href="#eg2" class="headerlink" title="eg2"></a>eg2</h3><p>会先打印<code>事件触发</code>，等待一秒钟，再打印<code>事件执行</code><br>setTime方法代两个参数，第一个参数为要执行的时间，第二个参数为执行该事件<strong>之前</strong>要等待的时间。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var EventEmitter = require(&apos;events&apos;).EventEmitter;</div><div class="line">var event = new EventEmitter;</div><div class="line">event.on(&apos;some_event&apos;, Event);</div><div class="line"></div><div class="line">function Event()&#123;</div><div class="line">	console.log(&quot;事件执行&quot;);</div><div class="line">&#125;</div><div class="line">setTimeout(function()&#123;</div><div class="line">	event.emit(&apos;some_event&apos;)</div><div class="line">	console.log(&quot;事件触发&quot;);</div><div class="line">&#125;, 1000);</div></pre></td></tr></table></figure></p>
+<h3 id="eg3"><a href="#eg3" class="headerlink" title="eg3"></a>eg3</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">var events = require(&apos;events&apos;);</div><div class="line">var emitter = new events.EventEmitter;</div><div class="line"></div><div class="line">emitter.on(&apos;some_event&apos;, function(arg1, arg2)&#123;</div><div class="line">	setTimeout(function()&#123;</div><div class="line">		console.log(&apos;绑定事件1&apos;, arg1, arg2);</div><div class="line">	&#125;, 500);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">//once 触发一次后解除绑定，以后不会被触发</div><div class="line">emitter.once(&apos;some_event&apos;, function(arg1, arg2)&#123;</div><div class="line">	console.log(&apos;绑定事件2&apos;, arg1, arg2);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">setTimeout(function()&#123;</div><div class="line">	emitter.emit(&apos;some_event&apos;, &apos;参数1&apos;, &apos;参数2&apos;);</div><div class="line">	console.log(&quot;事件已经被触发&quot;);</div><div class="line">&#125;, 1000);</div><div class="line">//如果实参不够形参指定的数量，其值为undefined</div><div class="line">emitter.emit(&apos;some_event&apos;, &apos;参数3&apos;);</div><div class="line">//触发没有绑定的事件不报错，什么也不执行</div><div class="line">emitter.emit(&apos;error1&apos;);</div><div class="line"></div><div class="line"></div><div class="line">// 只要是支持事件响应的模块都是EventEmitter的子类</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><p>node.js的文件系统对文件的操作包含两种方式，<strong>同步</strong>和<strong>异步</strong>，异步方式非阻塞，能够提高app性能<br>该程序的执行结果为：</p>
+<blockquote>
+<p><code>input1.txt文件内容</code><br>程序执行结束<br><code>input.txt文件内容</code></p>
+</blockquote>
+<p>即同步方式先执行完读操作和打印操作，然后打印结束信息，异步方式才打印信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var fs = require(&quot;fs&quot;)</div><div class="line">//异步</div><div class="line">fs.readFile(&apos;input.txt&apos;, function (err, data) &#123;</div><div class="line">    if (err) return console.error(err)</div><div class="line">    console.log(data.toString())</div><div class="line">&#125;)</div><div class="line">//同步</div><div class="line">var data = fs.readFileSync(&apos;input1.txt&apos;)</div><div class="line">console.log(data.toString())</div><div class="line"></div><div class="line">console.log(&quot;程序执行结束!&quot;)</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="buffer的用法"><a href="#buffer的用法" class="headerlink" title="buffer的用法"></a>buffer的用法</h2><p>输出为</p>
+<blockquote>
+<p>ABCDEFGHIJKLMNOPQRSTUVWXYZ数组<br>shuzu1<br>ABCD</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var buffer = new Buffer(36);</div><div class="line"></div><div class="line">for(var i = 0 ; i &lt; 26 ; i++)&#123;</div><div class="line">	buffer[i] = 65 + i;</div><div class="line">&#125;</div><div class="line">var len = buffer.write(&apos;数组&apos;,26);</div><div class="line">console.log(buffer.toString(&apos;utf8&apos;, 0, 26 + len));</div><div class="line"></div><div class="line"></div><div class="line">var buf = new Buffer(&quot;shuzu1&quot;);</div><div class="line">console.log(buf.toString());</div><div class="line"></div><div class="line">var buf = new Buffer([65, 66, 67 , 68]);</div><div class="line">console.log(buf.toString());</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="连接到mysql"><a href="#连接到mysql" class="headerlink" title="连接到mysql"></a>连接到mysql</h2><p>也可以通过mysql的<code>createPool</code>模块来创建一个连接池对象，然后通过对象的<code>getConnection</code>方法来连接到数据库。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">var mysql = require(&apos;mysql&apos;);</div><div class="line"></div><div class="line">var connection = mysql.createConnection(&#123;</div><div class="line">	host: &apos;123.207.124.135&apos;,</div><div class="line">	port: 3306,</div><div class="line">	database: &apos;myWeixin&apos;,</div><div class="line">	user:     &apos;myWeixin&apos;,</div><div class="line">	password: &apos;myWeixin&apos;</div><div class="line"></div><div class="line">&#125;);</div><div class="line"></div><div class="line">connection.connect(function(err)&#123;</div><div class="line">	if(err)</div><div class="line">		console.log(&apos;数据库连接失败&apos;);</div><div class="line">	else&#123;</div><div class="line">		console.log(&apos;数据库连接成功&apos;);</div><div class="line">		connection.end(function(err)&#123;</div><div class="line">			if(err)</div><div class="line">				console.log(&apos;关闭数据库失败&apos;);</div><div class="line">			else&#123;</div><div class="line">				console.log(&apos;关闭数据库成功&apos;);</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>###<strong>mysql数据库插入操作实例</strong><br>其中的obj为一个数据对象(python里的字典），第三个参数是一个回调函数，其中有两个参数，第一个参数是<code>err</code>对象，通过该参数检测数据库语句执行过程是否出错，<code>result</code>对象为数据库执行语句的执行结果集。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">connection.query(&apos;insert into user set?&apos;,</div><div class="line">                &#123;userName: obj.username, userPassword:obj.password&#125;,</div><div class="line">				function(err, result)&#123;</div><div class="line">					&#125;);</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="连接到mongodb"><a href="#连接到mongodb" class="headerlink" title="连接到mongodb"></a>连接到mongodb</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">var mongo = require(&apos;mongodb&apos;);</div><div class="line"></div><div class="line">var host = &apos;localhost&apos;;</div><div class="line">var port = 27017;</div><div class="line">var server = mongo.Server(host, port, &#123;auto_reconnect: true&#125;);</div><div class="line">var db = mongo.Db(&apos;test&apos;,  server, &#123;safe: true&#125;);</div><div class="line"></div><div class="line">db.open(function(err)&#123;</div><div class="line">	if(err)</div><div class="line">		console.log(&apos;数据库连接失败&apos;);</div><div class="line">	else&#123;</div><div class="line">		console.log(&apos;数据库连接成功&apos;);</div><div class="line">		db.close();</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">db.on(&apos;close&apos;, function(err, db)&#123;</div><div class="line">	if(err)</div><div class="line">		throw err;</div><div class="line">	else&#123;</div><div class="line">		console.log(&apos;数据库关闭成功&apos;);</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -308,10 +344,6 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/10/jade/" rel="prev" title="jade">
-                jade <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -379,7 +411,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
@@ -418,7 +450,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql操作"><span class="nav-number">1.</span> <span class="nav-text">mysql操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#event模块"><span class="nav-number">1.</span> <span class="nav-text">event模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#eg1"><span class="nav-number">1.1.</span> <span class="nav-text">eg1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eg2"><span class="nav-number">1.2.</span> <span class="nav-text">eg2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eg3"><span class="nav-number">1.3.</span> <span class="nav-text">eg3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统"><span class="nav-number">2.</span> <span class="nav-text">文件系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#buffer的用法"><span class="nav-number">3.</span> <span class="nav-text">buffer的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接到mysql"><span class="nav-number">4.</span> <span class="nav-text">连接到mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接到mongodb"><span class="nav-number">5.</span> <span class="nav-text">连接到mongodb</span></a></li></ol></div>
             
           </div>
         </section>
